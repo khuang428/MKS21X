@@ -1,0 +1,13 @@
+Git Commands
+
+add
+commit
+clone
+status
+diff
+log
+push
+pull
+show
+checkout
+reset
