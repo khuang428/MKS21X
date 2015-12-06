@@ -1,13 +1,12 @@
 Git Commands
 
-add
-commit
-clone
-status
-diff
-log
-push
-pull
-show
-checkout
-reset
+add-adds a file for git to track
+commit-saves changes but not to online repo(-m to add message)
+clone-clones repo from online to local computer
+status-shows added and not added files
+diff-shows changes with files
+log-shows commits with the messages and SHA
+push-saves changes to online repo
+pull-gets changes from online repo
+checkout-gets old commit and makes it the new head
+reset-reset the head to a certain commit
