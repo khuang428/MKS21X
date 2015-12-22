@@ -2,6 +2,8 @@ public class BarCode{// implements Comparable{
     // instance variables
     private String _zip;
     private int _checkDigit;
+    private static final String[]barcode ={"||:::",":::||","::|:|","::||:"
+                         ,":|::|",":|:|:",":||::","|:::|","|::|:","|:|::"};
     // constructors
     //precondtion: zip.length() = 5 and zip contains only digits.
     //postcondition: throws a runtime exception zip is not the correct length
@@ -14,18 +16,25 @@ public class BarCode{// implements Comparable{
 		throw new RuntimeException();
 	    }
 	    _zip=zip;
-	    _checkDigit = 0;//checkSum() % 10;
+	    _checkDigit = checkSum() % 10;
 	}catch(NumberFormatException e){
 	    throw new RuntimeException();
 	}   
     }
     // postcondition: Creates a copy of a bar code.
-    /*    public BarCode(BarCode x){}
-
-
+    public BarCode(BarCode x){
+	_zip = x._zip;
+	_checkDigit = x._checkDigit;
+    }
     //post: computes and returns the check sum for _zip
-    private int checkSum(){}
-
+    private int checkSum(){
+	int sum = 0;
+	for(int ctr = 0;ctr<_zip.length();ctr++){
+	    sum += Integer.valueOf(_zip.substring(ctr,ctr++));
+	}
+	return sum;
+    }
+    /*
     //postcondition: format zip + check digit + barcode 
     //ex. "084518  |||:::|::|::|::|:|:|::::|||::|:|"      
     public String toString(){}
